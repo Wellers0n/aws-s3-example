@@ -10,7 +10,7 @@
 At the root directory, run the following commands:
 
 ```sh
-yarn install
+yarn
 ```
 
 ```sh
