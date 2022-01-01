@@ -5,7 +5,7 @@ import {tmpFolder} from "../../helpers/tmpFolder";
 import mime from "mime";
 import {keys} from "../../configs/keys";
 
-const UploadController = async (file: string) => {
+const UploadService = async (file: string) => {
     const originalName = resolve(tmpFolder, file)
     const ContentType = mime.getType(originalName)
     const fileContent = await fs.promises.readFile(originalName)
@@ -27,4 +27,4 @@ const UploadController = async (file: string) => {
     return `${keys.s3.url}/${file}`
 }
 
-export default UploadController
+export default UploadService
