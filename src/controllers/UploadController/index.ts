@@ -1,7 +1,12 @@
 import {Request, Response} from 'express'
+import UploadService from "../../services/UploadService";
 
-const UploadController = (request: Request, response: Response) => {
-    return response.status(200).json({message: 'upload controller'})
+
+const UploadController = async (request: Request, response: Response) => {
+    const {file} = request
+
+    const content = await UploadService(file.filename)
+    return response.status(200).json({content})
 }
 
 export default UploadController

@@ -1,12 +1,18 @@
-import { staging } from './staging'
-import { production } from './production'
+import {staging} from './staging'
+import {production} from './production'
 
-const { NODE_ENV } = process.env
+const {NODE_ENV} = process.env
 
 export interface IKeysProps {
     port: string
     environment: string
-    mongoURI: string
+    mongoURI: string,
+    s3: {
+        id: string,
+        key: string,
+        bucket: string,
+        url: string,
+    },
 }
 
 let keys: IKeysProps
@@ -26,4 +32,4 @@ switch (NODE_ENV) {
         break
 }
 
-export { keys }
+export {keys}
