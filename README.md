@@ -21,6 +21,7 @@ yarn start
 
 - Node.JS
 - Typescript
+- AWS S3
 
 ## Versioning
 
