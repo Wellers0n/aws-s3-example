@@ -9,11 +9,20 @@ const UploadService = async (file: string) => {
     const originalName = resolve(tmpFolder, file)
     const ContentType = mime.getType(originalName)
     const fileContent = await fs.promises.readFile(originalName)
-
+    const user = {
+        file: 'avatar.jpg'
+    }
 
     const client = new S3({
         region: 'sa-east-1'
     })
+
+    if (user.file) {
+        await client.deleteObject({
+            Bucket: keys.s3.bucket,
+            Key: user.file
+        }).promise()
+    }
 
     // @ts-ignore
     await client.putObject({
