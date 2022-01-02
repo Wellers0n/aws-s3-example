@@ -24,6 +24,8 @@ const UploadService = async (file: string) => {
         ContentType
     }).promise()
 
+    await fs.promises.unlink(originalName)
+
     return `${keys.s3.url}/${file}`
 }
 
