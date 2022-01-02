@@ -10,7 +10,7 @@ const UploadService = async (file: string) => {
     const ContentType = mime.getType(originalName)
     const fileContent = await fs.promises.readFile(originalName)
     const user = {
-        file: 'avatar.jpg'
+        file: false
     }
 
     const client = new S3({
@@ -20,7 +20,7 @@ const UploadService = async (file: string) => {
     if (user.file) {
         await client.deleteObject({
             Bucket: keys.s3.bucket,
-            Key: user.file
+            Key: `avatar.jpg`
         }).promise()
     }
 
