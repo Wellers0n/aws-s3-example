@@ -7,6 +7,7 @@ import cors from 'cors'
 import { routes } from './routes'
 
 import { keys } from './configs/keys'
+import {tmpFolder} from "./helpers/tmpFolder";
 
 const port = keys.port || 3001
 
@@ -16,6 +17,7 @@ app.use(cors())
 app.use(express.json({}))
 app.use(express.urlencoded({ extended: true }))
 app.use(routes)
+app.use('/tmp', express.static(`${tmpFolder}`))
 
 
 app.listen(port, () => {
