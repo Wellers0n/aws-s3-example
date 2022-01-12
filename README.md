@@ -10,11 +10,11 @@
 At the root directory, run the following commands:
 
 ```sh
-yarn
+yarn or npm install
 ```
 
 ```sh
-yarn start
+yarn start or npm run start
 ```
 
 ## Built With
