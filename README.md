@@ -17,6 +17,10 @@ yarn or npm install
 yarn start or npm run start
 ```
 
+## .env
+
+You need to create a `.env` file in the root, see the keys in `.env.example`
+
 ## Built With
 
 - Node.JS
